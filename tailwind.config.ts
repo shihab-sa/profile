@@ -35,10 +35,13 @@ const config = {
     extend: {
       colors: {
         headerbgcolor: "#26235b",
+        sidebarbgcolor: "#FEFEFE",
+        sidebartabbgcolor: "#E9E9EF",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
+        // background: "hsl(var(--background))",
+        background: "#F6F6F6",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
