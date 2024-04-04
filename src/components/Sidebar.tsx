@@ -104,25 +104,13 @@ const Sidebar: React.FC<SidebarProps> = () => {
     <div className="mt-10">
       <div className="bg-sidebarbgcolor w-full pb-8 rounded-xl">
         {/* Profile section */}
-        <div className="flex justify-center items-center p-3 relative">
-          <Image
-            src={man}
-            alt="profile"
-            height={130}
-            width={130}
-            className=""
-          />
-          <div className="absolute bottom-5 left-5 bg-white h-6 w-6 rounded-xl border-2 grid place-items-center">
+        <div className="flex justify-center items-center p-3 relative sm:relative md:relative lg:relative">
+          <Image src={man} alt="profile" height={130} width={130} />
+          <div className="absolute bottom-6 left-5 sm:bottom-5 sm:left-4 md:bottom-9 md:left-24 lg:bottom-5   lg:left-5 sm:absolute md:absolute lg:absolute bg-white h-6 w-6 rounded-xl border-2 grid place-items-center">
             <Image src={leftSite} alt="profile" height={12} width={12} />
           </div>
-          <div>
-            <Image
-              src={rightSite}
-              alt="profile"
-              height={25}
-              width={25}
-              className="absolute right-4 bottom-6"
-            />
+          <div className="absolute right-4 bottom-6 sm:right-3 sm:bottom-6 md:bottom-8 md:right-24">
+            <Image src={rightSite} alt="profile" height={25} width={25} />
           </div>
         </div>
 

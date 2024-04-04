@@ -23,7 +23,7 @@ export default function RootLayout({
         <BreadcrumbDemo />
 
         <div className="flex ml-10 mr-10">
-          <div className=" w-[16%]">
+          <div className="w-[16%] sm:w-[50%] md:w-[60%]">
             <Sidebar />
           </div>
           <div className=" w-[100%] mt-10 ml-10 bg-sidebarbgcolor rounded-2xl">
