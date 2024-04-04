@@ -1,180 +1,167 @@
 import React from "react";
 import Image from "next/image";
-import sidebarImage from "../img/sidebar.png";
-import sidebarLeft from "../img/sidebar_left_icon.png";
-import sidebarRight from "../img/sidebar_right_icon.png";
 import Link from "next/link";
-import karate from "../img/Education.png";
-import onlineCourses from "../img/online_courses.png";
-import video from "../img/videos.png";
-import eqp from "../img/equp.png";
-import comp from "../img/compe.png";
-import fav from "../img/yourfev.png";
-import noti from "../img/noti.png";
-import { UserRound } from "lucide-react";
-import income from "../img/Income.png";
-import setting from "../img/settings (1).png";
-import signOut from "../img/signout.png";
+import edu from "../components/img/Education.png";
+import onlineCourses from "../components/img/online_courses.png";
+import videos from "../components/img/videos.png";
+import equpments from "./img/equp.png";
+import com from "./img/compe.png";
+import myfav from "./img/yourfev.png";
+import noti from "./img/noti.png";
+import man from "./img/sidebar.png";
+import leftSite from "./img/sidebar_left_icon.png";
+import rightSite from "./img/sidebar_right_icon.png";
+import income from "./img/Income.png";
+import signOut from "./img/signout.png";
+import setting from "./img/settings (1).png";
+import admin from "./img/online_courses.png";
 
-type Props = {};
+type SidebarItemProps = {
+  href: string;
+  imageSrc: string;
+  text: string;
+};
 
-export default function Sidebar({}: Props) {
+const SidebarItem: React.FC<SidebarItemProps> = ({ href, imageSrc, text }) => {
   return (
-    <div className=" mt-10">
-      <div className=" bg-sidebarbgcolor w-full pb-8 rounded-xl">
+    <div className="w-full bg-sidebartabbgcolor p-2 mb-1">
+      <Link href={href} className="flex items-center gap-2">
+        <Image
+          src={imageSrc}
+          alt={text}
+          height={10}
+          width={10}
+          color="#565656"
+        />
+        <span className="text-[9px] text-[#565656]">{text}</span>
+      </Link>
+    </div>
+  );
+};
+
+type SidebarProps = {};
+
+const Sidebar: React.FC<SidebarProps> = () => {
+  const sidebarItems = [
+    {
+      href: "/karete",
+      imageSrc: edu,
+      text: "Karate Course",
+    },
+    {
+      href: "/online",
+      imageSrc: onlineCourses,
+      text: "Online Courses",
+    },
+    {
+      href: "/myvideo",
+      imageSrc: videos,
+      text: "Videos",
+    },
+    {
+      href: "/equipments",
+      imageSrc: equpments,
+      text: "Equipments",
+    },
+    {
+      href: "/competetion",
+      imageSrc: com,
+      text: "Competition",
+    },
+    {
+      href: "/favorite",
+      imageSrc: myfav,
+      text: "Your Favorite",
+    },
+    {
+      href: "/noti",
+      imageSrc: noti,
+      text: "Notification",
+    },
+    {
+      href: "/myprofile",
+      imageSrc: admin,
+      text: "My Profile",
+    }, // Assuming no specific image for My Profile
+    {
+      href: "/setting",
+      imageSrc: setting,
+      text: "Setting",
+    },
+    {
+      href: "/signout",
+      imageSrc: signOut,
+      text: "Sign Out",
+    },
+    {
+      href: "/income",
+      imageSrc: income,
+      text: "Income",
+    },
+  ];
+
+  return (
+    <div className="mt-10">
+      <div className="bg-sidebarbgcolor w-full pb-8 rounded-xl">
+        {/* Profile section */}
         <div className="flex justify-center items-center p-3 relative">
           <Image
-            src={sidebarImage}
+            src={man}
             alt="profile"
             height={130}
             width={130}
             className=""
           />
-          <div>
-            <Image
-              src={sidebarLeft}
-              alt="profile"
-              height={15}
-              width={15}
-              className="absolute bottom-7 left-7"
-            />
+          <div className="absolute bottom-5 left-5 bg-white h-6 w-6 rounded-xl border-2 grid place-items-center">
+            <Image src={leftSite} alt="profile" height={12} width={12} />
           </div>
           <div>
             <Image
-              src={sidebarRight}
+              src={rightSite}
               alt="profile"
-              height={35}
-              width={35}
+              height={25}
+              width={25}
               className="absolute right-4 bottom-6"
             />
           </div>
         </div>
+
+        {/* Username section */}
         <div className="">
-          <p className=" uppercase text-[9px] flex justify-center items-center">
+          <p className="text-[9px] flex justify-center items-center text-[#26235B]">
             Assessment Username
           </p>
-          <small className="text-[7px] flex justify-center items-center">
+          <small className="text-[7px] flex justify-center items-center mt-2 text-[#565656]">
             Batch no:KC22041
           </small>
-          <small className="text-[7px] flex justify-center items-center">
+          <small className="text-[7px] flex justify-center items-center mt-2 text-[#565656]">
             Batch no:OKC1122331
           </small>
         </div>
-        {/* side bar section one start  */}
-        <div className=" mt-5">
-          <nav>
-            {/* one  */}
-            <div className="w-full bg-sidebartabbgcolor p-2 mb-1">
-              <Link href="/karete" className=" flex items-center gap-2 ">
-                <Image
-                  src={karate}
-                  alt="profile"
-                  height={10}
-                  width={10}
-                  color="#565656"
-                />
-                <span className=" text-[9px] text-[#565656]">
-                  Karate Course
-                </span>
-              </Link>
-            </div>
 
-            {/* two  */}
-            <div className="w-full bg-sidebartabbgcolor p-2 mb-1">
-              <Link href="/online" className=" flex items-center gap-2">
-                <Image
-                  src={onlineCourses}
-                  alt="profile"
-                  height={10}
-                  width={10}
-                />
-                <span className=" text-[9px]">Online Courses</span>
-              </Link>
-            </div>
-
-            {/* three  */}
-            <div className="w-full bg-sidebartabbgcolor p-2 mb-1">
-              <Link href="/myvideo" className=" flex items-center gap-2">
-                <Image src={video} alt="profile" height={10} width={10} />
-                <span className=" text-[9px]">Videos</span>
-              </Link>
-            </div>
-
-            {/* four  */}
-            <div className="w-full bg-sidebartabbgcolor p-2 mb-1">
-              <Link href="/equipments" className=" flex items-center gap-2">
-                <Image src={eqp} alt="profile" height={10} width={10} />
-                <span className=" text-[9px]">Equipments</span>
-              </Link>
-            </div>
-
-            {/* five  */}
-            <div className="w-full bg-sidebartabbgcolor p-2 mb-1">
-              <Link href="/competetion" className=" flex items-center gap-2">
-                <Image src={comp} alt="profile" height={10} width={10} />
-                <span className=" text-[9px]">Competition</span>
-              </Link>
-            </div>
-          </nav>
+        <div className="mt-4">
+          {sidebarItems.slice(0, 5).map((item, index) => (
+            <SidebarItem
+              key={index}
+              href={item.href}
+              imageSrc={item.imageSrc}
+              text={item.text}
+            />
+          ))}
         </div>
-
-        {/* side bar section one end */}
-
-        {/* side bar section two start  */}
-        <div className=" mt-5">
-          <nav>
-            {/* one  */}
-            <div className="w-full bg-sidebartabbgcolor p-2 mb-1">
-              <Link href="/fav" className=" flex items-center gap-2">
-                <Image src={fav} alt="profile" height={10} width={10} />
-                <span className=" text-[9px]">Your Favorite</span>
-              </Link>
-            </div>
-
-            {/* two  */}
-            <div className="w-full bg-sidebartabbgcolor p-2 mb-1">
-              <Link href="/noti" className=" flex items-center gap-2">
-                <Image src={noti} alt="profile" height={10} width={10} />
-                <span className=" text-[9px]">Notification</span>
-              </Link>
-            </div>
-
-            {/* three  */}
-            <div className="w-full bg-sidebartabbgcolor p-2 mb-1">
-              <Link href="/myprofile" className=" flex items-center gap-2">
-                <UserRound height={10} width={10} />
-                <span className=" text-[9px]">My Profile</span>
-              </Link>
-            </div>
-            {/* four  */}
-
-            <div className="w-full bg-sidebartabbgcolor p-2 mb-1">
-              <Link href="/setting" className=" flex items-center gap-2">
-                <Image src={setting} alt="profile" height={10} width={10} />
-                <span className=" text-[9px]">Setting</span>
-              </Link>
-            </div>
-
-            {/* five  */}
-            <div className="w-full bg-sidebartabbgcolor p-2 mb-1">
-              <Link href="/signout" className=" flex items-center gap-2">
-                <Image src={signOut} alt="profile" height={10} width={10} />
-                <span className=" text-[9px]">Sign Out</span>
-              </Link>
-            </div>
-
-            {/* six */}
-            <div className="w-full bg-sidebartabbgcolor p-2 mb-1">
-              <Link href="/income" className=" flex items-center gap-2">
-                <Image src={income} alt="profile" height={10} width={10} />
-                <span className=" text-[9px]">Income</span>
-              </Link>
-            </div>
-          </nav>
+        <div className="mt-3">
+          {sidebarItems.slice(5, sidebarItems.length).map((item, index) => (
+            <SidebarItem
+              key={index}
+              href={item.href}
+              imageSrc={item.imageSrc}
+              text={item.text}
+            />
+          ))}
         </div>
-
-        {/* side bar section two end */}
       </div>
     </div>
   );
-}
+};
+
+export default Sidebar;

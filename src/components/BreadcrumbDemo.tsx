@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Search } from "lucide-react";
-import imgLogo from "../img/assigment_logo.png";
-import MiniProfile from "../img/minipro.png";
+import imgLogo from "../components/img/assigment_logo.png";
+import MiniProfile from "../components/img/minipro.png";
 import {
   Breadcrumb,
   BreadcrumbItem,

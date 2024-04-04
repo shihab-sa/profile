@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import MiniProfile from "../img/minipro.png";
+import MiniProfile from "../components/img/minipro.png";
 import { Search } from "lucide-react";
 import {
   Breadcrumb,
@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import imgLogo from "../img/assigment_logo.png";
+import imgLogo from "../components/img/assigment_logo.png";
 import Image from "next/image";
 
 type Props = {};
@@ -63,8 +63,12 @@ export default function MobileNavbar({}: Props) {
               CONTACT
             </BreadcrumbItem>
           </BreadcrumbList>
-          <div>
+          <div className="  py-5 flex items-center p-2 bg-white rounded-lg">
             <Search className="text-black" size={20} />
+            <input
+              placeholder="Your Query"
+              className=" border-none outline-none p-2"
+            />
           </div>
         </SheetContent>
       </Sheet>

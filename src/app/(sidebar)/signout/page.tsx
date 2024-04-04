@@ -3,7 +3,11 @@ import React from "react";
 type Props = {};
 
 function page({}: Props) {
-  return <div>page sign out</div>;
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <h1 className="text-xl font-bold text-[#26235B]">Sign Out</h1>
+    </div>
+  );
 }
 
 export default page;
