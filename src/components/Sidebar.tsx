@@ -15,6 +15,7 @@ import income from "./img/Income.png";
 import signOut from "./img/signout.png";
 import setting from "./img/settings (1).png";
 import admin from "./img/online_courses.png";
+import MobileSidebar from "./MobileSidebar";
 
 type SidebarItemProps = {
   href: string;
@@ -102,10 +103,16 @@ const Sidebar: React.FC<SidebarProps> = () => {
 
   return (
     <div className="mt-10">
-      <div className="bg-sidebarbgcolor w-full pb-8 rounded-xl">
+      <div className="bg-sidebarbgcolor w-full pb-8 rounded-xl sm:hidden md:hidden">
         {/* Profile section */}
-        <div className="flex justify-center items-center p-3 relative sm:relative md:relative lg:relative">
-          <Image src={man} alt="profile" height={130} width={130} />
+        <div className="flex justify-center items-center p-3">
+          <Image
+            src={man}
+            alt="profile"
+            height={130}
+            width={130}
+            className=""
+          />
           <div className="absolute bottom-6 left-5 sm:bottom-5 sm:left-4 md:bottom-9 md:left-24 lg:bottom-5   lg:left-5 sm:absolute md:absolute lg:absolute bg-white h-6 w-6 rounded-xl border-2 grid place-items-center">
             <Image src={leftSite} alt="profile" height={12} width={12} />
           </div>
